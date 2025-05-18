@@ -2,6 +2,8 @@ import Hamburger from "/src/assets/hamburger.svg";
 import ChickenNuggets from "/src/assets/chicken.svg";
 import Submarine from "/src/assets/submarine.svg";
 import Pizza from "/src/assets/pizza.svg";
+import coffee from '/src/assets/coffee.svg'
+import cake from '/src/assets/cake.svg'
 import { useState } from "react";
 
 export default function CreateOrder({ onAddOrder }) {
@@ -15,6 +17,8 @@ export default function CreateOrder({ onAddOrder }) {
     "Chicken Nuggets": 300,
     "Submarine Sandwich": 300,
     "Pizza slices": 300,
+    "Coffee": 150,
+    "Cake": 550
   };
 
   function handleToggle(itemName, price) {
@@ -95,7 +99,11 @@ export default function CreateOrder({ onAddOrder }) {
                         ? ChickenNuggets
                         : itemName === "Submarine Sandwich"
                         ? Submarine
-                        : Pizza
+                        : itemName === "Pizza"
+                        ? Pizza
+                        : itemName === "Coffee"
+                        ? coffee
+                        : cake
                     }
                     alt={itemName}
                     className="w-10 h-10"
